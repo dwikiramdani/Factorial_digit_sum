@@ -5,38 +5,30 @@ function soal(x) {
   var range = x;
   var start = 0;
 
-  var a = 1;
-  var arr1 = [];
-  var arr2 = [];
-  var sumSquare = 0;
-  var sumArray = 0;
-  var arraySquare = 0;
+  var factorial = x;
+  var diff = factorial - 1;
+
+  var numberArr = [];
 
   while (start < range) {
-    var square = a * a;
-    arr1[start] = square;
-    sumSquare = sumSquare + square;
-
-    arr2[start] = a;
-    sumArray = sumArray + a;
-    arraySquare = sumArray * sumArray;
-    a = a + 1;
+    if (diff > 0) {
+      factorial = factorial * diff;
+    }
     start = start + 1;
+    diff = diff - 1;
+    var sNumber = factorial.toString();
   }
-  var diffSquare = arraySquare - sumSquare;
 
-  console.log("Angka dasar");
-  console.log(arr2);
-  console.log("Angka kuadrat");
-  console.log(sumArray);
-  console.log("Angka array");
-  console.log(arr1);
-  console.log("Sum array Kuadrat");
-  console.log(arraySquare);
-  console.log("Sum kuadrat");
-  console.log(sumSquare);
-  console.log("Selisih");
-  console.log(diffSquare);
+  for (var i = 0, len = sNumber.length; i < len; i += 1) {
+    numberArr.push(+sNumber.charAt(i));
+  }
+
+  for (var n = 0, sum = 0; n < numberArr.length; sum += numberArr[n++]);
+
+  console.log(sNumber);
+  console.log(numberArr);
+
+  console.log(sum);
 }
 
-console.log(soal(10));
+console.log(soal(12));
